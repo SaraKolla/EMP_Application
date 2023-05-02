@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:id="@+id/home"
+        android:title="Home"
+        android:icon="@drawable/baseline_flood_24"/>
+    <item android:id="@+id/History"
+        android:title="History"
+        android:icon="@drawable/baseline_browser_updated_24"/>
+    <item android:id="@+id/ToDo"
+        android:title="ToDo"
+        android:icon="@drawable/baseline_thumbs_up_down_24"/>
+</menu>
