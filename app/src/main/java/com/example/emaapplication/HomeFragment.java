@@ -80,12 +80,7 @@ public class HomeFragment extends Fragment implements LocationListener{
 
     private Button bSave;
     private TextView locationTextView;
-
-
-
     DatabaseReference database = FirebaseDatabase.getInstance().getReference();
-
-
     private TextView tempout, humout, windout;
 
     private RequestQueue requestQueue;
@@ -98,34 +93,20 @@ public class HomeFragment extends Fragment implements LocationListener{
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 
-
         View view = inflater.inflate(R.layout.fragment_home, container, false);
-
-
-
         bSave = view.findViewById(R.id.bSave);
-
-
         noiseOutput = (TextView) view.findViewById(R.id.noiseoutput);
-
         dateTextView = view.findViewById(R.id.tvmonthdate);
         cityTextView = view.findViewById(R.id.livecity);
         greetingTextView = view.findViewById(R.id.tvgreeting_msj);
 
-
         // Initialize the TextViews
-
         tempout = view.findViewById(R.id.tempout);
         humout = view.findViewById(R.id.humout);
         windout = view.findViewById(R.id.windout);
 
-
-
-
         // Create a new request queue
         requestQueue = Volley.newRequestQueue(getContext());
-
-
         loadNoiseLevelService();
 
         // Get current date
@@ -208,7 +189,6 @@ public class HomeFragment extends Fragment implements LocationListener{
                             Toast.makeText(getActivity(), "Error saving data: " + e.getMessage(), Toast.LENGTH_SHORT).show();
                         }
                     });
-
         });
 
             DiaBox.setView(DiaView);
@@ -218,11 +198,7 @@ public class HomeFragment extends Fragment implements LocationListener{
             }
         });
         return view;
-
-
     }
-
-
     private void clickgooglemap(){
         FragmentManager fragmentManager = getActivity().getSupportFragmentManager();
         fragmentManager.beginTransaction()
@@ -230,12 +206,10 @@ public class HomeFragment extends Fragment implements LocationListener{
                 .addToBackStack(null)
                 .commit();
     }
-
     private void loadWhetherAPI(String cityName){
 
         // Construct the API URL
         String url = "http://api.openweathermap.org/data/2.5/weather?q=" + cityName + "&appid=" + "bbc7578fd06ba33dc5f2c409fee7af85" + "&units=metric";
-
 
         JsonObjectRequest jsonRequest = new JsonObjectRequest(Request.Method.GET, url, null, (Response.Listener<JSONObject>) response -> {
             try {
@@ -360,20 +334,13 @@ public class HomeFragment extends Fragment implements LocationListener{
             // Request location permissions
             requestPermissions(new String[]{Manifest.permission.ACCESS_FINE_LOCATION, Manifest.permission.ACCESS_COARSE_LOCATION}, 1);
         }
-
-
-
-
     }
-
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         // Get the location manager
         locationManager = (LocationManager) getActivity().getSystemService(Context.LOCATION_SERVICE);
-
     }
-
     @Override
     public void onLocationChanged(@NonNull Location location) {
         // Get the city name from the location

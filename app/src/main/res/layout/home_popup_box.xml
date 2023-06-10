@@ -3,8 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:padding="15dp"
-    android:background="@color/white"
-    >
+    android:background="@color/white">
 
     <EditText
         android:id="@+id/sfiletext"
@@ -18,8 +17,7 @@
         android:paddingStart="12dp"
         android:paddingEnd="12dp"
         android:background="@drawable/custome_text_input"
-        android:drawableStart="@drawable/baseline_save_as_24"
-        />
+        android:drawableStart="@drawable/baseline_save_as_24" />
     <Button
         android:id="@+id/dialog_saveB"
         android:layout_width="120dp"
@@ -36,7 +34,5 @@
         android:hint="cancel"
         android:layout_marginTop="110dp"
         android:layout_marginLeft="130dp"/>
-
-
 
 </RelativeLayout>

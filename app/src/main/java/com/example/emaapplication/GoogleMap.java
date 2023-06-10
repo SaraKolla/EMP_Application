@@ -24,14 +24,10 @@ import com.google.android.gms.maps.model.LatLng;
 
 
 public class GoogleMap extends Fragment implements OnMapReadyCallback {
-
     private com.google.android.gms.maps.GoogleMap mMap;
     private LocationManager locationManager;
     private LatLng userLocation;
     private MapView mapView;
-
-
-
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -45,12 +41,10 @@ public class GoogleMap extends Fragment implements OnMapReadyCallback {
 
         return view;
     }
-
     @Override
     public void onResume() {
         super.onResume();
     }
-
     @Override
     public void onMapReady(@NonNull com.google.android.gms.maps.GoogleMap googleMap) {
         mMap = googleMap;

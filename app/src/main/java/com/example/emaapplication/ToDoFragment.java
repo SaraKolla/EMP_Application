@@ -50,13 +50,8 @@ public class ToDoFragment extends Fragment {
     private Button saveButton;
     private String title, description, date, time;
     final Calendar calendar = Calendar.getInstance();
-
     private ListView listView;
     private ArrayAdapter<String> adapter;
-
-
-
-
     private ArrayList<String> dataList = new ArrayList<>();
 
     DatabaseReference database = FirebaseDatabase.getInstance().getReference().child("EMP_ToDo");
@@ -77,9 +72,6 @@ public class ToDoFragment extends Fragment {
         // Adapter to display tasks in the ListView
         adapter = new ArrayAdapter<>(getContext(), android.R.layout.simple_list_item_2, android.R.id.text1, dataList);
         listView.setAdapter(adapter);
-
-        //hi hi hi hi hi hi hi hi hi hi
-
 
         // Calendar View
         final TextInputEditText calendarInput = view.findViewById(R.id.dateedittView);
@@ -202,10 +194,6 @@ public class ToDoFragment extends Fragment {
                 Toast.makeText(getActivity(), "Error fetching data: " + databaseError.getMessage(), Toast.LENGTH_SHORT).show();
             }
         });
-
-
-
-
         //update and delete
         listView.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
             @Override

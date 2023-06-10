@@ -7,17 +7,10 @@
     tools:context=".HistoryFragment"
     android:background="@drawable/leaf_background">
 
-    <!-- TODO: Update blank fragment layout -->
-
-
-
-
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical"
-        >
-
+        android:orientation="vertical">
 
         <Spinner
             android:id="@+id/yeardorpdownbox"
@@ -28,8 +21,6 @@
             android:layout_marginRight="10dp"
             android:layout_marginTop="15dp"
             android:background="@drawable/background_border"/>
-
-
 
         <Spinner
             android:id="@+id/Monthdorpdownbox"
@@ -85,9 +76,8 @@
             android:layout_marginLeft="20dp"
             app:rippleColor="#33AAAAAA"
             android:backgroundTint="#7EFFFFFF"
-            android:background="@drawable/custome_button_transperant_background"
-            /></LinearLayout>
-
+            android:background="@drawable/custome_button_transperant_background" />
+    </LinearLayout>
 
         <LinearLayout
             android:id="@+id/my_linear_layout"
@@ -111,9 +101,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text=""
-                    android:textColor="@color/Green"
-                    />
-
+                    android:textColor="@color/Green" />
 
             </LinearLayout>
             <View
@@ -138,9 +126,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text=""
-                    android:textColor="@color/Green"
-                    />
-
+                    android:textColor="@color/Green" />
 
             </LinearLayout>
             <View
@@ -164,10 +150,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text=""
-                    android:textColor="@color/Green"
-                    />
-
-
+                    android:textColor="@color/Green" />
             </LinearLayout>
             <View
                 android:layout_width="match_parent"
@@ -191,9 +174,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text=""
-                    android:textColor="@color/Green"
-                    />
-
+                    android:textColor="@color/Green" />
 
             </LinearLayout>
             <View
@@ -218,9 +199,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text=""
-                    android:textColor="@color/Green"
-                    />
-
+                    android:textColor="@color/Green" />
 
             </LinearLayout>
             <View
@@ -245,9 +224,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text=""
-                    android:textColor="@color/Green"
-                    />
-
+                    android:textColor="@color/Green" />
 
             </LinearLayout>
             <View
@@ -273,11 +250,7 @@
                     android:layout_height="wrap_content"
                     android:text=""
                     android:textColor="@color/Green" />
-
-
             </LinearLayout>
-
-
 
         </LinearLayout>
         <LinearLayout
@@ -296,8 +269,7 @@
                 android:textAllCaps="false"
                 app:rippleColor="@color/Green"
                 android:backgroundTint="#7EFFFFFF"
-                android:background="@drawable/custome_button_transperant_background"
-                />
+                android:background="@drawable/custome_button_transperant_background" />
             <Button
                 android:id="@+id/ssbutton"
                 android:layout_width="wrap_content"
@@ -312,8 +284,6 @@
                 android:text="  Send to Description  "
                 android:background="@drawable/custome_button_transperant_background" />
         </LinearLayout>
-
-
     </LinearLayout>
 </FrameLayout>
 

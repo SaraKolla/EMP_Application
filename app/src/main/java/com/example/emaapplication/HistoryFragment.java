@@ -47,18 +47,13 @@ public class HistoryFragment extends Fragment {
     private TextView sCity, sHumidity, sDate, sNoise_Levels, sTemperature, sTime, sWind_Speed;
 
     private EditText eText;
-    private Button btnSearch, clearButton;
-
-
-
-
+    private Button btnSearch, clearButton, sToDEs;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_history, container, false);
-
 
         // get year
         yearSpinner = view.findViewById(R.id.yeardorpdownbox);
@@ -83,8 +78,7 @@ public class HistoryFragment extends Fragment {
         sWind_Speed= view.findViewById(R.id.windoutput);
         sNoise_Levels = view.findViewById(R.id.Noise_leveloutput);
         sTemperature = view.findViewById(R.id.temperatureoutput);
-
-
+        sToDEs = view.findViewById(R.id.ssbutton);
 
         eText = view.findViewById(R.id.editText1);
         btnSearch = view.findViewById(R.id.s_button);
@@ -126,7 +120,6 @@ public class HistoryFragment extends Fragment {
                 @Override
                 public void onCancelled(@NonNull DatabaseError error) {
                     Toast.makeText(getActivity(), "Error saving data: " + error.getMessage(), Toast.LENGTH_SHORT).show();
-
                 }
             });
         });
@@ -135,9 +128,6 @@ public class HistoryFragment extends Fragment {
         });
 
         return view;
-
-
-
     }
     private void clearData(){
 
@@ -154,9 +144,6 @@ public class HistoryFragment extends Fragment {
         dateSpinner.setSelection(0);
 
     }
-
-
-
     private List<String> getYearList() {
         List<String> yearList = new ArrayList<>();
 
@@ -171,5 +158,4 @@ public class HistoryFragment extends Fragment {
 
         return yearList;
     }
-
 }

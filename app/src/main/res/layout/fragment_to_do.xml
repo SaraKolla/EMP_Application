@@ -7,21 +7,11 @@
     tools:context=".ToDoFragment"
     android:background="@drawable/leaf_background">
 
-
-
-
-    <!-- TODO: Update blank fragment layout -->
-
-
-
-
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
         android:padding="16dp">
-
-
 
         <EditText
             android:id="@+id/editTitle"
@@ -33,7 +23,6 @@
             android:layout_marginRight="10dp"
             android:layout_marginTop="15dp"
             android:background="@drawable/background_border"/>
-
 
         <EditText
             android:id="@+id/editDescription"
@@ -57,8 +46,6 @@
             android:layout_marginTop="15dp"
             android:background="@drawable/background_border"/>
 
-
-
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/calendar_input_layout"
             android:layout_width="match_parent"
@@ -78,8 +65,6 @@
                 android:background="@drawable/background_border"/>
 
         </com.google.android.material.textfield.TextInputLayout>
-
-
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -103,14 +88,12 @@
             android:textSize="20dp"
             android:background="@drawable/custome_button_transperant_background"/>
 
-
         <ListView
             android:id="@+id/taskListView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
             android:background="@drawable/table_background"/>
-
 
     </LinearLayout>
 
