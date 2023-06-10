@@ -67,7 +67,7 @@ public class GoogleMap extends Fragment implements OnMapReadyCallback {
             Location lastLocation = locationManager.getLastKnownLocation(LocationManager.GPS_PROVIDER);
             if (lastLocation != null) {
                 userLocation = new LatLng(lastLocation.getLatitude(), lastLocation.getLongitude());
-                // Zoom in to user location with zoom level 15.0f
+                // Zoom in to user location with zoom level 18.0f
                 CameraUpdate cameraUpdate = CameraUpdateFactory.newLatLngZoom(userLocation, 18.0f);
                 mMap.animateCamera(cameraUpdate);
             }

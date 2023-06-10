@@ -18,6 +18,7 @@ import android.os.Bundle;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.appcompat.app.AlertDialog;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 import androidx.fragment.app.Fragment;
@@ -32,6 +33,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -163,8 +165,17 @@ public class HomeFragment extends Fragment implements LocationListener{
             }
         });
 
-        // For Save Button
-        bSave.setOnClickListener(v -> {
+        bSave.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                AlertDialog.Builder DiaBox = new AlertDialog.Builder(getContext());
+                View DiaView = getLayoutInflater().inflate(R.layout.home_popup_box, null);
+                EditText sfiletext = (EditText) DiaView.findViewById(R.id.sfiletext);
+                Button psave = (Button) DiaView.findViewById(R.id.dialog_saveB);
+
+                // For Save Button
+        psave.setOnClickListener(v -> {
+            String SaveName = sfiletext.getText().toString();
             String time = timeText;
             String city = locationTextView.getText().toString();
             String yearMonthAndDate = formattedDate;
@@ -175,6 +186,7 @@ public class HomeFragment extends Fragment implements LocationListener{
 
             // Create a new data object with the values
             Map<String, Object> data = new HashMap<>();
+            data.put("Save Name", SaveName);
             data.put("City", city);
             data.put("Time", time);
             data.put("Month_and_Date", yearMonthAndDate);
@@ -184,7 +196,7 @@ public class HomeFragment extends Fragment implements LocationListener{
             data.put("Noise_Levels", Noise_Levels);
 
             // Push the data to the database
-            database.child("EMP_Weather").child(time).child(yearMonthAndDate).setValue(data)
+            database.child("EMP_Weather").child(SaveName).setValue(data)
                     .addOnSuccessListener(new OnSuccessListener<Void>() {
                         @Override
                         public void onSuccess(Void unused) {
@@ -199,8 +211,12 @@ public class HomeFragment extends Fragment implements LocationListener{
 
         });
 
+            DiaBox.setView(DiaView);
+            AlertDialog dialog = DiaBox.create();
+            dialog.show();
 
-
+            }
+        });
         return view;
 
 

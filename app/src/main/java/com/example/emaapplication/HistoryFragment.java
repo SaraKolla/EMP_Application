@@ -44,12 +44,10 @@ public class HistoryFragment extends Fragment {
     private ArrayAdapter<String> yearAdapter;
     private ArrayAdapter<String> MonthAdapter;
     private  ArrayAdapter<String> dateAdapter;
-    private DatabaseReference mDatabase;
-    private TextView dateoutput ,sCity, sHumidity, sDate, sNoise_Levels, sTemperature, sTime, sWind_Speed;
+    private TextView sCity, sHumidity, sDate, sNoise_Levels, sTemperature, sTime, sWind_Speed;
 
     private EditText eText;
-    private TimePickerDialog picker;
-    private Button btnGet, btnSearch;
+    private Button btnSearch, clearButton;
 
 
 
@@ -69,12 +67,12 @@ public class HistoryFragment extends Fragment {
         yearSpinner.setAdapter(yearAdapter);
 
         MonthSpinner = view.findViewById(R.id.Monthdorpdownbox);
-        MonthAdapter = new ArrayAdapter<>(getContext(), android.R.layout.simple_spinner_item, new String[]{"-Select Month-","January","February","March","April","May","June","July","August","September","October","November","December"});
+        MonthAdapter = new ArrayAdapter<>(getContext(), android.R.layout.simple_spinner_item, new String[]{"Select Month","January","February","March","April","May","June","July","August","September","October","November","December"});
         MonthAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         MonthSpinner.setAdapter(MonthAdapter);
 
         dateSpinner = view.findViewById(R.id.datedorpdownbox);
-        dateAdapter = new ArrayAdapter<>(getContext(), android.R.layout.simple_spinner_item, new String[]{"-Select Date-","1","2","3","4","5","6","7","8","9","10","11","12","13","14","15","16","17","18","19","20","21","22","23","24","25","26","27","28","29","30","31"});
+        dateAdapter = new ArrayAdapter<>(getContext(), android.R.layout.simple_spinner_item, new String[]{"Select Date","1","2","3","4","5","6","7","8","9","10","11","12","13","14","15","16","17","18","19","20","21","22","23","24","25","26","27","28","29","30","31"});
         dateAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         dateSpinner.setAdapter(dateAdapter);
 
@@ -89,44 +87,19 @@ public class HistoryFragment extends Fragment {
 
 
         eText = view.findViewById(R.id.editText1);
-        eText.setInputType(InputType.TYPE_NULL);
-        eText.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                final Calendar cldr = Calendar.getInstance();
-                int hour = cldr.get(Calendar.HOUR_OF_DAY);
-                int minutes = cldr.get(Calendar.MINUTE);
-                // time picker dialog
-                picker = new TimePickerDialog(requireContext(),
-                        new TimePickerDialog.OnTimeSetListener() {
-                            @Override
-                            public void onTimeSet(TimePicker tp, int sHour, int sMinute) {
-                                eText.setText(sHour + ":" + sMinute + ":" + "17");
-                            }
-                        }, hour, minutes, true);
-                picker.show();
-            }
-        });
-        btnGet = view.findViewById(R.id.button1);
-        btnGet.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Toast.makeText(getActivity(), "Get values", Toast.LENGTH_SHORT).show();
-            }
-        });
         btnSearch = view.findViewById(R.id.s_button);
+        clearButton = view.findViewById(R.id.clearbutton);
 
         //get values from DataBase
-
         btnSearch.setOnClickListener(v -> {
             String getYear = yearSpinner.getSelectedItem().toString();
             String getMonth = MonthSpinner.getSelectedItem().toString();
             String getDate = dateSpinner.getSelectedItem().toString();
             String finalDate = (getYear +" " + getMonth + " " + getDate);
-            String getTime = eText.getText().toString();
+            String getFileName = eText.getText().toString();
 
             FirebaseDatabase database = FirebaseDatabase.getInstance();
-            DatabaseReference userRef = database.getReference("EMP_Weather").child(getTime).child(finalDate);
+            DatabaseReference userRef = database.getReference("EMP_Weather").child(getFileName);
             userRef.addValueEventListener(new ValueEventListener() {
                 @Override
                 public void onDataChange(@NonNull DataSnapshot snapshot) {
@@ -157,12 +130,32 @@ public class HistoryFragment extends Fragment {
                 }
             });
         });
+        clearButton.setOnClickListener(v -> {
+            clearData();
+        });
 
         return view;
 
 
 
     }
+    private void clearData(){
+
+        sCity.setText(null);
+        sHumidity.setText(null);
+        sTime.setText(null);
+        sDate.setText(null);
+        sWind_Speed.setText(null);
+        sNoise_Levels.setText(null);
+        sTemperature.setText(null);
+        eText.setText(null);
+        yearSpinner.setSelection(0);
+        MonthSpinner.setSelection(0);
+        dateSpinner.setSelection(0);
+
+    }
+
+
 
     private List<String> getYearList() {
         List<String> yearList = new ArrayList<>();

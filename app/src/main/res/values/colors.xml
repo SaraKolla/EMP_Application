@@ -11,4 +11,5 @@
     <color name="b_color">#0D6A6B</color>
     <color name="Green">#0D6A6B</color>
     <color name="transparent">#00000000</color>
+    <color name="dark_gray">#696969</color>
 </resources>

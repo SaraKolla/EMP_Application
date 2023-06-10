@@ -4,21 +4,13 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#006A4E"
-    tools:context=".HistoryFragment">
+    tools:context=".HistoryFragment"
+    android:background="@drawable/leaf_background">
 
     <!-- TODO: Update blank fragment layout -->
 
 
-    <ImageView
-        android:id="@+id/imageView2"
-        android:layout_width="411dp"
-        android:layout_height="910dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/androidlarge" />
+
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -64,32 +56,22 @@
             android:id="@+id/editText1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginVertical="15dp"
-            android:ems="10"
-            android:padding="15dp"
             android:layout_marginHorizontal="10sp"
-            android:hint="Select Time"
-            android:textColor="@color/black"
-            android:background="@drawable/background_border"/>
+            android:layout_marginVertical="15dp"
+            android:background="@drawable/background_border"
+            android:ems="10"
+            android:hint="Enter Save Name"
+            android:padding="15dp"
+            android:textColor="#000000"
+            android:textColorHint="#272626"
+            android:textSize="16sp" />
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         android:gravity="right"
         android:paddingHorizontal="10dp">
-        <Button
-            android:id="@+id/button1"
-            android:layout_width="140dp"
-            android:layout_height="wrap_content"
-            android:text="Get Data"
-            android:textAllCaps="false"
-            android:textColor="#FFFFFF"
-            android:textSize="20sp"
-            app:cornerRadius="2dp"
-            app:rippleColor="#33AAAAAA"
-            android:backgroundTint="#7EFFFFFF"
-            android:background="@drawable/custome_button"
-            />
+
 
         <Button
             android:id="@+id/s_button"
@@ -97,13 +79,13 @@
             android:layout_height="wrap_content"
             android:text="Search"
             android:textAllCaps="false"
-            android:textColor="#FFFFFF"
+            android:textColor="#0D6A6B"
             android:textSize="20sp"
             app:cornerRadius="2dp"
             android:layout_marginLeft="20dp"
             app:rippleColor="#33AAAAAA"
             android:backgroundTint="#7EFFFFFF"
-            android:background="@drawable/custome_button"
+            android:background="@drawable/custome_button_transperant_background"
             /></LinearLayout>
 
 
@@ -123,13 +105,13 @@
                     android:layout_width="170dp"
                     android:layout_height="wrap_content"
                     android:text="Date :"
-                    android:textColor="@color/white"/>
+                    android:textColor="@color/Green"/>
                 <TextView
                     android:id="@+id/dateoutput"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="-"
-                    android:textColor="@color/white"
+                    android:text=""
+                    android:textColor="@color/Green"
                     />
 
 
@@ -150,13 +132,13 @@
                     android:layout_width="170dp"
                     android:layout_height="wrap_content"
                     android:text="Time :"
-                    android:textColor="@color/white"/>
+                    android:textColor="@color/Green"/>
                 <TextView
                     android:id="@+id/timeoutput"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="-"
-                    android:textColor="@color/white"
+                    android:text=""
+                    android:textColor="@color/Green"
                     />
 
 
@@ -166,7 +148,7 @@
                 android:layout_height="1dp"
                 android:layout_marginLeft="10dp"
                 android:layout_marginRight="20dp"
-                android:background="@android:color/white"/>
+                android:background="@color/white"/>
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -176,13 +158,13 @@
                     android:layout_width="170dp"
                     android:layout_height="wrap_content"
                     android:text="Temperature :"
-                    android:textColor="@color/white"/>
+                    android:textColor="@color/Green"/>
                 <TextView
                     android:id="@+id/temperatureoutput"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="-"
-                    android:textColor="@color/white"
+                    android:text=""
+                    android:textColor="@color/Green"
                     />
 
 
@@ -203,13 +185,13 @@
                     android:layout_width="170dp"
                     android:layout_height="wrap_content"
                     android:text="Humidity :"
-                    android:textColor="@color/white"/>
+                    android:textColor="@color/Green"/>
                 <TextView
                     android:id="@+id/Humidityoutput"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="-"
-                    android:textColor="@color/white"
+                    android:text=""
+                    android:textColor="@color/Green"
                     />
 
 
@@ -230,13 +212,13 @@
                     android:layout_width="170dp"
                     android:layout_height="wrap_content"
                     android:text="Wind_Speed :"
-                    android:textColor="@color/white"/>
+                    android:textColor="@color/Green"/>
                 <TextView
                     android:id="@+id/windoutput"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="-"
-                    android:textColor="@color/white"
+                    android:text=""
+                    android:textColor="@color/Green"
                     />
 
 
@@ -257,13 +239,13 @@
                     android:layout_width="170dp"
                     android:layout_height="wrap_content"
                     android:text="Noise level :"
-                    android:textColor="@color/white"/>
+                    android:textColor="@color/Green"/>
                 <TextView
                     android:id="@+id/Noise_leveloutput"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="-"
-                    android:textColor="@color/white"
+                    android:text=""
+                    android:textColor="@color/Green"
                     />
 
 
@@ -284,14 +266,13 @@
                     android:layout_width="170dp"
                     android:layout_height="wrap_content"
                     android:text="City :"
-                    android:textColor="@color/white"/>
+                    android:textColor="@color/Green"/>
                 <TextView
                     android:id="@+id/cityoutput"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="-"
-                    android:textColor="@color/white"
-                    />
+                    android:text=""
+                    android:textColor="@color/Green" />
 
 
             </LinearLayout>
@@ -308,29 +289,28 @@
                 android:layout_width="120dp"
                 android:layout_height="wrap_content"
                 android:text="Clear"
-                android:textColor="#FFFFFF"
+                android:textColor="#0D6A6B"
                 android:textSize="20sp"
                 app:cornerRadius="2dp"
-                android:layout_marginLeft="150dp"
+                android:layout_marginLeft="60dp"
                 android:textAllCaps="false"
-                app:rippleColor="#33AAAAAA"
+                app:rippleColor="@color/Green"
                 android:backgroundTint="#7EFFFFFF"
-                android:background="@drawable/custome_button"
+                android:background="@drawable/custome_button_transperant_background"
                 />
             <Button
                 android:id="@+id/ssbutton"
-                android:layout_width="100dp"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="ss"
-                android:textColor="#FFFFFF"
                 android:textSize="20sp"
+                android:textColor="#0D6A6B"
                 android:textAllCaps="false"
                 app:cornerRadius="2dp"
                 android:layout_marginLeft="20dp"
                 app:rippleColor="#33AAAAAA"
                 android:backgroundTint="#7EFFFFFF"
-                android:background="@drawable/custome_button"
-                />
+                android:text="  Send to Description  "
+                android:background="@drawable/custome_button_transperant_background" />
         </LinearLayout>
 
 

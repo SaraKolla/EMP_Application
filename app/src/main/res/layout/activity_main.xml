@@ -62,7 +62,7 @@
         android:id="@+id/gob"
         android:layout_width="130dp"
         android:layout_height="50dp"
-        android:background="@drawable/custome_button"
+        android:background="@drawable/custome_button_transperant_background"
         android:backgroundTint="#7EFFFFFF"
         android:fontFamily="@font/lexend_variablefont_wght"
         android:text="GO"
